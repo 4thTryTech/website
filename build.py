@@ -164,11 +164,11 @@ def write(path, text):
 def main():
     os.chdir(HERE)
     if os.path.isdir(OUT):
-        shutil.rmtree(OUT)
+        shutil.rmtree(OUT, ignore_errors=True)   # some environments cannot delete; files are then overwritten in place
     for src, dst in COPY.items():
         s, d = os.path.join(BRAND, src), os.path.join(OUT, dst)
         os.makedirs(os.path.dirname(d), exist_ok=True)
-        shutil.copytree(s, d) if os.path.isdir(s) else shutil.copyfile(s, d)
+        shutil.copytree(s, d, dirs_exist_ok=True) if os.path.isdir(s) else shutil.copyfile(s, d)
     for folder in ("src", "static"):                       # our own styles, script and images
         for name in os.listdir(folder):
             shutil.copyfile(os.path.join(folder, name), os.path.join(OUT, "assets", name))
