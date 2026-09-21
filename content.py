@@ -11,8 +11,8 @@ SITE = {
     "name": "4th Try Tech",
     "tagline": "When the 3rd try wasn’t enough, keep going.",
     "description": "A working log of technology projects, experiments, and misadventures.",
-    "url": "https://4thtrytech.github.io/website/",   # change to https://4thtry.tech/ when the domain points here
-    "domain": "",                                       # set to "4thtry.tech" to write a CNAME file for GitHub Pages
+    "url": "https://www.4thtry.tech/",
+    "domain": "www.4thtry.tech",   # GitHub Pages custom domain; build writes docs/CNAME
 }
 
 PAGES = {
