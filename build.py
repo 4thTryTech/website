@@ -82,7 +82,7 @@ def layout(path, title, description, body, body_class=""):
 </main>
 <footer class="site"><div class="band" aria-hidden="true"></div><div class="wrap">
 <span class="tag">{e(SITE['tagline'])}</span>
-<nav aria-label="Footer">{nav}</nav>
+<nav aria-label="Footer">{nav}<a href="https://michaellehman.me/">About Michael</a></nav>
 </div></footer>
 <script src="{root}assets/site.js"></script>
 </body>
@@ -110,6 +110,8 @@ def prose(blocks):
         elif isinstance(b, tuple) and b[0] == "try":
             _, n, held, heading, text = b
             out.append(f'<div class="try"><div class="try-h">{pill(n, held)}<h2>{e(heading)}</h2></div><p>{e(text)}</p></div>')
+        elif isinstance(b, tuple) and b[0] == "link":
+            out.append(f'<p>{e(b[1])}<a href="{e(b[3])}">{e(b[2])}</a>.</p>')
         elif isinstance(b, tuple) and b[0] == "note":
             out.append(f'<p class="placeholder">{e(b[1])}</p>')
         else:

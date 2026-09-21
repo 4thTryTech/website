@@ -3,6 +3,7 @@
 Entries marked sample=True are invented placeholders that show the layout. They carry a visible "Sample" tag on the
 site. Replace them with real write-ups and drop the flag.
 Body blocks: a plain string is a paragraph; ("h2", text) is a heading; ("note", text) is a highlighted placeholder note;
+("link", before, label, url) is a paragraph ending in a link;
 ("try", number, held, heading, text) is one step of a project's route (held=True marks the try that worked).
 """
 
@@ -38,8 +39,8 @@ PAGES = {
             "Projects and lab notes on architecture, tools, automation and home-built infrastructure. Each one shows the path it actually took: what I set out to do, what I tried, what I changed and why, and what is running now. Versions, numbers and configs are included, because “it got faster” helps nobody.",
             "If something here saves you a lap, it has done its job.",
             ("h2", "Who is behind it"),
-            ("note", "Draft wording, to be confirmed before launch."),
-            "I am Michael Lehman, a solutions architect. I design tooling and automation for large managed infrastructure by day, and I run a homelab that gets rebuilt more often than it strictly needs. 4th Try Tech is my personal project, separate from my employer, and the opinions are my own.",
+            "I am Michael Lehman, an IT service and platform automation architect with more than 25 years in enterprise infrastructure. By day I design service management, automation, observability and agentic AI solutions for large managed environments. By night I run a homelab that gets rebuilt more often than it strictly needs. 4th Try Tech is my personal project, separate from my employer, and the opinions are my own.",
+            ("link", "My full background and experience are at ", "michaellehman.me", "https://michaellehman.me/"),
             ("h2", "The mark"),
             "The rocket carries a 4 because it is the fourth try that flies. Coral marks a try that did not take. Green is kept for the one that did, and for nothing else.",
         ],
@@ -49,6 +50,7 @@ PAGES = {
         "description": "How to reach 4th Try Tech.",
         "body": [
             "Found a mistake, have a better way, or tried the same thing and got a different result? I would like to hear it.",
+            ("link", "My resume and background are at ", "michaellehman.me", "https://michaellehman.me/"),
             ("note", "Placeholder: the contact channel has not been chosen yet. An email address, a form, or links such as GitHub or LinkedIn will go here."),
         ],
     },
