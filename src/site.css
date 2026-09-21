@@ -1,0 +1,71 @@
+/* 4th Try Tech site styles. Theme switching for every selector below is driven by html[data-theme]. */
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+*{box-sizing:border-box}
+:root{
+  --ground:var(--ftt-ground);--body:var(--ftt-body);--fin:var(--ftt-fin);--fin-shade:var(--ftt-fin-shade);--flame:var(--ftt-flame);--sun:var(--ftt-sun);--success:var(--ftt-success);--ink:var(--ftt-ink);
+  --panel:#E8DFCE;--muted:#6B6E85;--line:#D8CDB8;--on-fin:#FFFFFF;color-scheme:light}
+:root[data-theme="dark"]{--panel:#272D3B;--muted:#A3A59F;--line:#394054;--on-fin:#1F2430;color-scheme:dark}
+:root:not([data-theme="dark"]) .t-dark{display:none!important}:root[data-theme="dark"] .t-light{display:none!important}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 17px/1.6 "Nunito Sans",system-ui,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:Fredoka,"Trebuchet MS","Segoe UI",sans-serif;font-weight:600;color:var(--body);margin:0;text-wrap:balance;line-height:1.15}
+h1{font-size:clamp(32px,4.4vw,48px)} h2{font-size:clamp(24px,3vw,34px)} h3{font-size:20px}
+p{margin:0} a{color:var(--body)} a:hover{color:var(--fin)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--fin);outline-offset:3px}
+code,pre{font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;font-size:.92em}
+.skip{position:absolute;left:-999px;top:8px;background:var(--fin);color:var(--on-fin);padding:8px 14px;border-radius:6px;z-index:9}.skip:focus{left:12px}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+header.site{position:sticky;top:0;z-index:5;background:var(--ground);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.logo img{height:40px;display:block}
+nav.main{display:flex;gap:28px;font-weight:600} nav.main a{text-decoration:none;color:var(--ink)} nav.main a:hover,nav.main a[aria-current]{color:var(--fin)}
+.tools{display:flex;align-items:center;gap:12px}
+.theme{display:inline-flex;align-items:center;gap:8px;background:none;border:1px solid var(--line);border-radius:999px;color:var(--ink);font:600 14px "Nunito Sans",sans-serif;padding:7px 14px 7px 10px;cursor:pointer}.theme:hover{border-color:var(--body)}
+.theme svg{width:16px;height:16px;display:block}
+.menu{display:none;background:none;border:1px solid var(--line);border-radius:6px;color:var(--ink);font:600 15px "Nunito Sans",sans-serif;padding:8px 12px;cursor:pointer}
+.hero img{display:block;width:100%;height:auto}
+.hero .phone{display:none}
+.lead{padding-block:40px;display:flex;flex-direction:column;gap:20px;align-items:flex-start}
+.lead p{font-size:clamp(20px,2.4vw,26px);line-height:1.35;max-width:26ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+.btn{display:inline-block;background:var(--fin);color:var(--on-fin);font:600 17px Fredoka,sans-serif;text-decoration:none;padding:12px 22px;border-radius:999px} .btn:hover{background:var(--fin-shade);color:var(--on-fin)}
+.more{font-weight:600}
+section.block{padding-block:48px;border-top:1px solid var(--line)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px 56px;align-items:start}
+.text{display:flex;flex-direction:column;gap:16px;max-width:64ch}
+.text h2{margin-top:20px}
+.tries{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.tries li{display:flex;flex-direction:column;gap:10px}
+.tries p,.card p{font-size:15.5px;color:var(--muted);line-height:1.5}
+.pill{display:inline-grid;place-items:center;flex:none;width:30px;height:30px;border-radius:50%;border:3px solid var(--flame);color:var(--fin);font:600 15px Fredoka,sans-serif}
+.pill.ok{border-color:var(--success);color:var(--success)}
+.meta .pill{width:26px;height:26px;font-size:13px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:24px}
+.card{background:var(--panel);padding:22px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit;border-radius:4px}
+.card:hover{color:inherit}.card:hover h3{color:var(--fin)}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:13.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.sample{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:1px 7px;border-radius:3px}
+.links{margin-top:20px;display:flex;gap:24px;font-weight:600}
+.page{padding-block:56px 72px;display:flex;flex-direction:column;gap:20px}
+.page .cards{margin-top:12px}
+.placeholder{border:1px dashed var(--fin);background:var(--panel);padding:12px 16px;border-radius:4px;font-size:15.5px}
+.try{display:flex;flex-direction:column;gap:8px;margin-top:12px}.try-h{display:flex;align-items:center;gap:12px}.try-h h2{margin:0;font-size:24px}
+.back{margin-top:16px;font-weight:600}
+footer.site{margin-top:24px}
+.band{height:54px;background:linear-gradient(var(--flame) 0 33.33%,var(--fin) 0 66.66%,var(--body) 0)}
+footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center}
+footer .tag{font:600 19px Fredoka,sans-serif;color:var(--body)}
+footer nav{display:flex;flex-wrap:wrap;gap:20px;font-size:15px}
+@media (max-width:900px){.two{grid-template-columns:1fr}.tries{grid-template-columns:repeat(2,minmax(0,1fr))}.cards{grid-template-columns:1fr}.hero .desk{display:none}.hero .tab{display:block}}
+@media (min-width:901px){.hero .tab{display:none}
+  /* the hero leaves room for the line and buttons in the first screen; the stripes run on to the screen edges */
+  .hero{--h:min(56.25vw,calc(100svh - 64px - 150px));height:max(var(--h),360px);background:linear-gradient(var(--ground) 0 61.93%,var(--flame) 0 65.82%,var(--fin) 0 69.71%,var(--body) 0 73.6%,var(--ground) 0)}
+  .hero .desk{height:100%;width:auto;max-width:100%;margin-inline:auto}
+  .lead{flex-direction:row;align-items:center;justify-content:space-between;gap:32px;padding-block:0;min-height:150px}.lead p{max-width:34ch;font-size:24px}}
+@media (max-width:700px){
+  .menu{display:block}.theme span{display:none}.theme{padding:9px}
+  nav.main{display:none;position:absolute;left:0;right:0;top:64px;background:var(--ground);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:8px 20px 16px}
+  nav.main.open{display:flex} nav.main a{padding:12px 0;border-top:1px solid var(--line)} nav.main a:first-child{border-top:0}}
+@media (max-width:600px){.hero .tab{display:none}.hero .phone{display:block;width:100%;height:calc(100svh - 64px);object-fit:cover;object-position:50% 38%}
+  .lead{padding-block:28px}section.block{padding-block:36px}.page{padding-block:36px 48px}
+  .tries{grid-template-columns:1fr}.tries li{flex-direction:row;align-items:flex-start;gap:14px}.tries li>div{display:flex;flex-direction:column;gap:4px}}
